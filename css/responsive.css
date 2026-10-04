@@ -1,0 +1,44 @@
+/* Smartphone: some a sidebar, aparece navegação inferior */
+@media (max-width: 768px) {
+  .app {
+    grid-template-areas:
+      "topbar"
+      "conteudo"
+      "bottom-nav";
+    grid-template-columns: 1fr;
+    grid-template-rows: 56px 1fr 60px;
+  }
+
+  .sidebar { display: none; }
+
+  .conteudo { padding: 1rem; }
+
+  .usuario-nome { display: none; }
+
+  .bottom-nav {
+    grid-area: bottom-nav;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid var(--cor-borda);
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  .bottom-nav a {
+    flex: 1; text-align: center; padding: 0.5rem 0.3rem;
+    font-size: 0.7rem; color: var(--cor-texto-suave);
+    text-decoration: none; white-space: nowrap;
+  }
+
+  .bottom-nav a.ativo { color: var(--cor-primaria); font-weight: 600; }
+
+  .cards { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .card .numero { font-size: 1.3rem; }
+
+  .tabela th, .tabela td { padding: 0.5rem 0.6rem; font-size: 0.8rem; }
+
+  /* Vendas no mobile */
+  .venda-layout { grid-template-columns: 1fr; }
+  .add-produto { grid-template-columns: 1fr; }
+}
